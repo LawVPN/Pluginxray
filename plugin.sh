@@ -19,4 +19,3 @@ chmod +x add-vmess-user
 chmod +x add-trojan-user
 
 cd
-rm plugin.sh
