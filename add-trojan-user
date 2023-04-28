@@ -38,8 +38,8 @@ sed -i '/#trojan-grpc$/a\#& '"$user $exp"'\
 },{"password": "'""$user""'","email": "'""$user""'"' /usr/local/etc/xray/config.json
 
 trojanlink="trojan://$user@$domain:$tls?path=$pathtrojan&security=tls&host=$domain&type=ws&sni=$domain#$user"
-trojanlink1="trojan://${user}@$domain:tls?mode=gun&security=tls&type=grpc&serviceName=trojan-grpc&sni=$domain#$user"
-trojanlink2="trojan://${user}@$domain:tls?mode=gun&security=tls&type=grpc&serviceName=trojan-grpc&sni=$domain#$user"
+trojanlink1="trojan://${user}@$domain:$tls?mode=gun&security=tls&type=grpc&serviceName=trojan-grpc&sni=$domain#$user"
+trojanlink2="trojan://${user}@$domain:$tls?mode=gun&security=tls&type=grpc&serviceName=trojan-grpc&sni=$domain#$user"
 sleep 1 && systemctl restart xray > /dev/null 2>&1
 clear
 echo -e "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━" | tee -a /etc/log-create-user.log
